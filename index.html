@@ -90,7 +90,7 @@
     <body>
         <div class="card">
             <!-- アバター画像 (avatar.jpg を同じフォルダに置いてください) -->
-            <img src="avatar.jpg" alt="tako" class="avatar" />
+            <img src="avatar.png" alt="tako" class="avatar" />
 
             <h1>tako</h1>
             <div class="interests">BLENDER / GODOT / PHOTOGRAPHY</div>
@@ -106,14 +106,15 @@
                 >
             </div>
 
-            <div class="links">
-                <a
-                    href="https://bsky.app/profile/tako-humanoid.bsky.social"
-                    class="btn-bsky"
-                    target="_blank"
-                >
-                    🦋 Bluesky
-                </a>
+            <div class="links" style="display: flex; flex-direction: column; gap: 10px; align-items: center;">
+                    <a href="https://bsky.app/profile/tako-humanoid.bsky.social" class="btn-bsky" target="_blank" style="width: 200px;">
+                        🦋 Bluesky
+                    </a>
+                    <!-- Discordの表示用ボタン -->
+                    <div style="background: #5865F2; color: white; padding: 10px 24px; border-radius: 30px; font-weight: bold; width: 200px; display: flex; align-items: center; justify-content: center; gap: 8px;">
+                        <span>🎮</span>
+                        <span>tako_humanoid</span>
+                    </div>
             </div>
         </div>
     </body>
