@@ -1,118 +1,155 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="ja">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>tako | Profile</title>
-        <style>
-            :root {
-                --main-color: #2c3e50;
-                --accent-color: #0085ff;
-                --bg-color: #f4f7f6;
-            }
-            body {
-                font-family:
-                    "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN",
-                    "Hiragino Sans", sans-serif;
-                background: var(--bg-color);
-                color: var(--main-color);
-                margin: 0;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                min-height: 100vh;
-            }
-            .card {
-                background: white;
-                width: 90%;
-                max-width: 450px;
-                padding: 40px 20px;
-                border-radius: 20px;
-                box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
-                text-align: center;
-            }
-            /* アバター画像を丸く表示 */
-            .avatar {
-                width: 120px;
-                height: 120px;
-                border-radius: 50%;
-                object-fit: cover;
-                border: 4px solid white;
-                box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-                margin-bottom: 20px;
-            }
-            h1 {
-                margin: 10px 0 5px;
-                font-size: 1.8rem;
-            }
-            .interests {
-                font-weight: bold;
-                color: #7f8c8d;
-                margin-bottom: 20px;
-                font-size: 0.9rem;
-                letter-spacing: 1px;
-            }
-            /* P2Pゲーム開発の紹介文 */
-            .status-box {
-                background: #f9f9f9;
-                padding: 15px;
-                border-radius: 12px;
-                margin: 20px 0;
-                font-size: 0.95rem;
-                border-left: 4px solid var(--accent-color);
-                text-align: left;
-            }
-            .status-en {
-                display: block;
-                font-size: 0.85rem;
-                color: #666;
-                margin-top: 5px;
-            }
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>tako | Profile</title>
+    <style>
+    :root {
+        /* 深海のカラーパレット */
+        --deep-sea-top: #00212e;
+        --deep-sea-bottom: #001219;
+        --ocean-glow: #005f73;
+        --text-main: #e9ecef;
+        --text-sub: #94d2bd; /* 海中の発光をイメージした淡い緑青 */
+        --discord-color: #5865F2;
+    }
 
-            .links {
-                margin-top: 25px;
-            }
-            .btn-bsky {
-                display: inline-block;
-                text-decoration: none;
-                background: var(--accent-color);
-                color: white;
-                padding: 10px 24px;
-                border-radius: 30px;
-                font-weight: bold;
-                transition: opacity 0.2s;
-            }
-            .btn-bsky:hover {
-                opacity: 0.8;
-            }
-        </style>
-    </head>
-    <body>
-        <div class="card">
-            <!-- アバター画像 (avatar.jpg を同じフォルダに置いてください) -->
-            <img src="avatar.png" alt="tako" class="avatar" />
+    body {
+        font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", sans-serif;
+        /* 上から下へ暗くなるグラデーションで深海を表現 */
+        background: linear-gradient(180deg, var(--deep-sea-top) 0%, var(--deep-sea-bottom) 100%);
+        color: var(--text-main);
+        margin: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+    }
 
-            <h1>tako</h1>
-            <div class="interests">BLENDER / GODOT / PHOTOGRAPHY</div>
+    .card {
+        background: rgba(255, 255, 255, 0.05); /* 半透明のガラス質感 */
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        width: 90%;
+        max-width: 420px;
+        padding: 40px 20px;
+        border-radius: 30px;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        text-align: center;
+        box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+    }
 
-            <!-- P2P対戦ゲーム開発の表示 -->
-            <div class="status-box">
-                <strong
-                    >現在、P2Pを利用したオンライン対戦ゲームを開発中です。</strong
-                >
-                <span class="status-en"
-                    >Currently developing a P2P-based online multiplayer
-                    game.</span
-                >
-            </div>
+    .avatar {
+        width: 120px;
+        height: 120px;
+        border-radius: 50%;
+        object-fit: cover;
+        border: 3px solid var(--text-sub);
+        box-shadow: 0 0 20px rgba(148, 210, 189, 0.2);
+        margin-bottom: 20px;
+    }
 
-            <div class="links" style="display: flex; flex-direction: column; gap: 10px; align-items: center;">
-                    <!-- Discordの表示用ボタン -->
-                    <div style="background: #5865F2; color: white; padding: 10px 24px; border-radius: 30px; font-weight: bold; width: 200px; display: flex; align-items: center; justify-content: center; gap: 8px;">
-                        <span>🎮Discord</span>
-                        <span>tako_humanoid</span>
-                    </div>
-            </div>
+    h1 {
+        margin: 10px 0 5px;
+        font-size: 1.8rem;
+        letter-spacing: 2px;
+        color: #ffffff;
+    }
+
+    .interests {
+        font-weight: bold;
+        color: var(--text-sub);
+        margin-bottom: 25px;
+        font-size: 0.85rem;
+        letter-spacing: 3px;
+    }
+
+    .status-box {
+        background: rgba(0, 0, 0, 0.3);
+        padding: 18px;
+        border-radius: 15px;
+        margin: 20px 0;
+        font-size: 0.95rem;
+        border-left: 4px solid var(--ocean-glow);
+        text-align: left;
+        line-height: 1.5;
+    }
+
+    .status-en {
+        display: block;
+        font-size: 0.8rem;
+        color: #8899a6;
+        margin-top: 6px;
+    }
+
+    .links {
+        margin-top: 30px;
+    }
+
+    .discord-badge {
+        background: var(--discord-color);
+        color: white;
+        padding: 12px 30px;
+        border-radius: 50px;
+        font-weight: bold;
+        font-size: 1rem;
+        display: inline-flex;
+        align-items: center;
+        gap: 12px;
+        box-shadow: 0 4px 15px rgba(88, 101, 242, 0.4);
+        transition: transform 0.2s;
+    }
+
+    .discord-badge:hover {
+        transform: translateY(-2px);
+    }
+    </style>
+</head>
+<body>
+
+<div class="card">
+    <!-- アバター画像 (avatar.png) -->
+    <img src="avatar.png" alt="tako" class="avatar">
+
+    <h1>tako</h1>
+    <div class="interests">BLENDER / GODOT / PHOTOGRAPHY</div>
+
+    <!-- P2P対戦ゲーム開発の表示 -->
+    <div class="status-box">
+        <strong>現在、P2Pを利用したオンライン対戦ゲームを開発中です。</strong>
+        <span class="status-en">Currently developing a P2P-based online multiplayer game.</span>
+    </div>
+
+    <!-- 連絡先：Discordのみ -->
+    <div class="links">
+        <div class="discord-badge">
+            <span>🎮</span>
+            <span>tako_humanoid</span>
         </div>
-    </body>
+        <a href="https://tako.bearblog.dev/" class="blog-btn" style="
+                    background: rgba(255, 255, 255, 0.1);
+                    color: var(--text-sub);
+                    border: 1px solid var(--text-sub);
+                    padding: 12px 30px;
+                    border-radius: 50px;
+                    font-weight: bold;
+                    font-size: 1rem;
+                    display: inline-flex;
+                    align-items: center;
+                    justify-content: center;
+                    gap: 12px;
+                    width: 200px;
+                    box-sizing: border-box;
+                    text-decoration: none;
+                    box-shadow: 0 4px 15px rgba(148, 210, 189, 0.1);
+                    transition: all 0.2s;
+                " onmouseover="this.style.background='rgba(148, 210, 189, 0.1)'" onmouseout="this.style.background='rgba(255, 255, 255, 0.1)'">
+                    <span>📝</span>
+                    <span>Workshop Blog</span>
+                </a>
+    </div>
+</div>
+
+</body>
 </html>
